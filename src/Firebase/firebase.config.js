@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "furniture-778ae",
   storageBucket: "furniture-778ae.appspot.com",
   messagingSenderId: "446830436478",
-  appId: "1:446830436478:web:b71e1e1acfb92dd370b82f"
+  appId: "1:446830436478:web:b71e1e1acfb92dd370b82f",
 };
 
 // Initialize Firebase
