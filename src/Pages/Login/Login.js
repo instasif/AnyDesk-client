@@ -15,9 +15,20 @@ const Login = () => {
       .catch(err => console.error(err))
     }
 
-    const {register, handleSubmit} = useForm();
+    const {register, formState: { errors }, handleSubmit} = useForm();
+
+    const {logIn} = useContext(AuthContext);
+    const [logInErr, setLogInErr] = useState('')
     const handleLogin = data =>{
-        console.log(data);
+      setLogInErr('');
+        logIn(data.email, data.password)
+        .then(res => {
+          const user = res.user;
+          console.log(user);
+        })
+        .catch(err => {
+          setLogInErr(err.message)
+        })
     }
 
   return (
@@ -28,17 +39,26 @@ const Login = () => {
 
             <div className="form-control w-full max-w-xs">
             <label className="label"><span className="label-text">Email</span></label>
-            <input {...register("Email")} type="email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
+            <input {...register("email", {
+              require: "Email Address is required"
+            })}
+             type="email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
+             {errors.email && <p role="alert">{errors.email?.message}</p>}
             </div>
 
             <div className="form-control w-full max-w-xs">
             <label className="label"><span className="label-text">Password</span></label>
-            <input {...register("Password")} type="password" placeholder="Password" className="input input-bordered w-full max-w-xs" />
+            <input {...register("password", {
+              require: "Password is required"
+            })} type="password" placeholder="Password" className="input input-bordered w-full max-w-xs" />
             </div>
 
           <input className="btn border-none w-full bg-orange-400 max-w-xs my-4" type="submit" value='Login'/>
+          <div>
+            {logInErr && <p className="text-sm text-red-500">{logInErr}</p>}
+          </div>
         </form>
-        <p>New to here? <Link className="text-red-500" to='/signup'>Signup</Link></p>
+        <p>New to here? <Link className="text-red-600" to='/signup'>Signup</Link></p>
         <div className="divider">OR</div>
         <button onClick={handleGoogleLogin} className="btn btn-outline w-full">CONTINUE WITH GOOGLE</button>
       </div>
