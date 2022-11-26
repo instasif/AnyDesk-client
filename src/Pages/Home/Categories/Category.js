@@ -7,7 +7,7 @@ const Category = ({ category }) => {
     <Link to={`/category/${categoryID}`}>
       <div className="card bg-orange-400 text-primary-content">
         <div className="card-body">
-          <h1 className="text-center text-xl text-bold">{name}</h1>
+          <h1 className="text-center text-3xl text-bold">{name}</h1>
         </div>
       </div>
     </Link>

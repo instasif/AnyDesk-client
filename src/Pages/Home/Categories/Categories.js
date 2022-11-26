@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
 import Category from './Category';
 
 const Categories = () => {
-const [categories, setCategories] = useState([]);
-
-    useEffect(() =>{
-        fetch('http://localhost:5000/categories')
+    const {data: categories = []} = useQuery({
+        queryKey: ['categories'],
+        queryFn: () => fetch('http://localhost:5000/categories')
         .then(res => res.json())
-        .then(data => setCategories(data))
-    },[])
+    })
+    
     return (
         <section className='my-16'>
         <div>
