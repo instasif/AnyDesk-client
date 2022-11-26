@@ -17,7 +17,7 @@ const [categories, setCategories] = useState([]);
         <div className='grid gap-6 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 my-6'>
             {
                 categories.map( category => <Category
-                key={category.id}
+                key={category._id}
                 category={category}
                 /> )
             }
