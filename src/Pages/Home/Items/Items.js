@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import Modal from "../../Modal/Modal";
 import Item from "./Item";
 
 const Items = () => {
-  // grid gap-6 grid-cols-1 lg:grid-cols-3 md:grid-cols-2
+  const [treatement, setTreatement] = useState(null);
   const items = useLoaderData();
-  console.log(items);
   return (
-    <div className=" w-auto h-auto">
+    <section>
+      <div className=" w-auto h-auto">
       {
-        items.map(i => <Item key={i.name} i={i}/>)
+        items.map(i => <Item 
+          key={i.name} 
+          i={i}
+          setTreatement={setTreatement}
+          />)
       }
     </div>
+    {treatement && <Modal treatement={treatement}/>}
+    </section>
   );
 };
 

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 
-const Item = ({ i }) => {
+
+const Item = ({ i, setTreatement }) => {
   const { productPhoto, locationOfSeller, originalPrice, productAddedDate, resalePrice, status, yearOfUse, name, conditionOfProduct} = i;
   return (
     <div className="card card-compact lg:card-side bg-base-100 shadow-xl my-6">
@@ -19,7 +20,10 @@ const Item = ({ i }) => {
         <p>Status: {status}</p>
         </div>
         <div className="card-actions my-auto lg:justify-end">
-          <button className="btn bg-orange-400 border-none">Add</button>
+          <label 
+          htmlFor="my-modal-3" className="btn bg-orange-400 border-none"
+          onClick={() => setTreatement(i)}
+          >Add</label>
         </div>
       </div>
     </div>
