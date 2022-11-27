@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 
 const Item = ({ i, setTreatement }) => {
-  const { productPhoto, locationOfSeller, originalPrice, productAddedDate, resalePrice, status, yearOfUse, name, conditionOfProduct} = i;
+  const { productPhoto, locationOfSeller, originalPrice, productAddedDate, resalePrice, status, yearOfUse, name, conditionOfProduct, sellerName} = i;
   return (
     <div className="card card-compact lg:card-side bg-base-100 shadow-xl my-6">
       <figure>
@@ -11,6 +11,7 @@ const Item = ({ i, setTreatement }) => {
       <div className="card-body">
         <h2 className="card-title text-orange-500">{name}</h2>
         <div className="text-lg font-medium">
+        <p>Seller Name: {sellerName}</p>
         <p>Condition: {conditionOfProduct}</p>
         <p>Date: {productAddedDate}</p>
         <p>Location: {locationOfSeller}</p>
