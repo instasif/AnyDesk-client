@@ -10,7 +10,11 @@ const Myorders = () => {
     const {data: orders = []} = useQuery({
         queryKey: ['order', user?.email],
         queryFn: async () => {
-            const res = await fetch(url);
+            const res = await fetch(url, {
+              headers: {
+                author:   `bearer ${localStorage.getItem('accessToken')}`
+              }
+            });
             const data = await res.json();
             return data;
         }
@@ -33,13 +37,13 @@ const Myorders = () => {
     </thead>
     <tbody>
       {
-        orders.map(( o, i ) => <tr className="hover">
-            <th>{i + 1}</th>
-            <td>{o.buyerName}</td>
-            <td>{o.product}</td>
-            <td>{o.location}</td>
-            <td>{o.price} Taka</td>
-      </tr>)
+        orders.map(( o, i ) => <tr key={o._id} className="hover">
+        <th>{i + 1}</th>
+        <td>{o.buyerName}</td>
+        <td>{o.product}</td>
+        <td>{o.location}</td>
+        <td>{o.price} Taka</td>
+  </tr>)
       }
     </tbody>
   </table>

@@ -11,21 +11,21 @@ const CustomerReactions = () => {
             _id: 1,
             name: "Asif Hossain",
             location: 'Dhaka',
-            review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto!',
+            review: 'Nicely product reached at home. packaging was amazing. Better quality.',
             img: img1
         },
         {
             _id: 2,
             name: "Saleha Banu",
             location: 'Cumilla',
-            review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto!',
+            review: 'Nicely product reached at home. packaging was amazing. Better quality.',
             img: img2
         },
         {
             _id: 3,
             name: "Maleka Banu",
             location: 'Dhaka',
-            review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto!',
+            review: 'Nicely product reached at home. packaging was amazing. Better quality.',
             img: img3
         },
     ]

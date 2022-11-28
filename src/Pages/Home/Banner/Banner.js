@@ -10,12 +10,8 @@ const Banner = () => {
           alt=''
         />
         <div>
-          <h1 className="text-5xl font-bold">Box Office News!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+          <h1 className="text-5xl font-bold text-orange-500">AnyDesk</h1>
+          <p className="py-6 text-xl">Bangladesh np. 1 leading resale platform! Let your space live up to your expectations.</p>
           <button className="btn bg-orange-400 border-none">Get Started</button>
         </div>
       </div>
