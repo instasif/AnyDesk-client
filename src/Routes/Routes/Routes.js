@@ -45,8 +45,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myorders/allusers',
-                // element: <AdminRoute><AllUsers/></AdminRoute>
-                element: <AllUsers/> 
+                element: <AdminRoute><AllUsers/></AdminRoute>
+                // element: <AllUsers/> 
             },
         ]
     }

@@ -9,7 +9,6 @@ const AllUsers = () => {
             const res = await fetch('http://localhost:5000/users');
             const data = await res.json();
             return data;
-            
         }
     });
 
@@ -47,7 +46,8 @@ const AllUsers = () => {
     </thead>
     <tbody>
       {
-        users.map(( u, i ) => <tr key={u._id} className="hover">
+        users?.map(( u, i ) =>
+         <tr key={u._id} className="hover">
             <th>{i + 1}</th>
             <td>{u.name}</td>
             <td>{u.email}</td>
