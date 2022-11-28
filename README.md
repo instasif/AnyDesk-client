@@ -1,4 +1,3 @@
 live site: https://furniture-778ae.web.app/myorders/allusers
 
-
-1. ami buyer, admin create motamoti create korsilam kintu bujhlam na sesh mesh ki jeno samosha holo time pai nai. amar code gulo ektu dakhben. mone hoche ar hobe na.
+* ami buyer, admin create motamoti create korsilam kintu bujhlam na sesh mesh ki jeno samosha holo time pai nai. amar code gulo ektu dakhben. ami shundor moto create korsilam. kaj o kortesi lo jemon- prodduct add to cart/dashboard, make admin, admin check kore all users, add products, added products dispaly route create kore onek bar check kore push korsilam. last a dekhi ar kaj kortche na. 
