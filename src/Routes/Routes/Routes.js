@@ -9,6 +9,8 @@ import Myorders from "../../Pages/Myorders/Myorders";
 import Signup from "../../Pages/Signup/Signup";
 import AdminRoute from "../adminroute/AdminRoute";
 import PrivateRoutes from "../PrivateRoute/PrivateRoutes";
+import AddProducts from "../../Pages/AddProducts/AddProducts";
+import MyProducts from "../../Pages/MyProducts/MyProducts";
 
 const router = createBrowserRouter([
     {
@@ -46,7 +48,14 @@ const router = createBrowserRouter([
             {
                 path: '/myorders/allusers',
                 element: <AdminRoute><AllUsers/></AdminRoute>
-                // element: <AllUsers/> 
+            },
+            {
+                path: '/myorders/addproducts',
+                element: <AdminRoute><AddProducts/></AdminRoute>
+            },
+            {
+                path: '/myorders/myproducts',
+                element: <AdminRoute><MyProducts/></AdminRoute>
             },
         ]
     }
