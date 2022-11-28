@@ -11,6 +11,7 @@ import AdminRoute from "../adminroute/AdminRoute";
 import PrivateRoutes from "../PrivateRoute/PrivateRoutes";
 import AddProducts from "../../Pages/AddProducts/AddProducts";
 import MyProducts from "../../Pages/MyProducts/MyProducts";
+import Blogs from "../../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
                 element: <PrivateRoutes><Items/></PrivateRoutes>,
                 loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
             },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
+            }
             
         ]
     },
