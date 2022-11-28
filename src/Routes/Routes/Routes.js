@@ -14,55 +14,77 @@ import MyProducts from "../../Pages/MyProducts/MyProducts";
 import Blogs from "../../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Main></Main>,
-        children: [
-            {
-                path: '/',
-                element: <Home/>
-            },
-            {
-                path: '/login',
-                element: <Login/>
-            },
-            {
-                path: '/signup',
-                element: <Signup></Signup>
-            },
-            {
-                path: '/category/:id',
-                element: <PrivateRoutes><Items/></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
-            },
-            {
-                path: '/blogs',
-                element: <Blogs></Blogs>
-            }
-            
-        ]
-    },
-    {
-        path: '/myorders',
-        element: <PrivateRoutes><DashboardLayout/></PrivateRoutes>,
-        children: [
-            {
-                path: '/myorders',
-                element: <Myorders></Myorders>
-            },
-            {
-                path: '/myorders/allusers',
-                element: <AdminRoute><AllUsers/></AdminRoute>
-            },
-            {
-                path: '/myorders/addproducts',
-                element: <AdminRoute><AddProducts/></AdminRoute>
-            },
-            {
-                path: '/myorders/myproducts',
-                element: <AdminRoute><MyProducts/></AdminRoute>
-            },
-        ]
-    }
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup></Signup>,
+      },
+      {
+        path: "/category/:id",
+        element: (
+          <PrivateRoutes>
+            <Items />
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://assignment-server-neon.vercel.app/category/${params.id}`
+          ),
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+      },
+    ],
+  },
+  {
+    path: "/myorders",
+    element: (
+      <PrivateRoutes>
+        <DashboardLayout />
+      </PrivateRoutes>
+    ),
+    children: [
+      {
+        path: "/myorders",
+        element: <Myorders></Myorders>,
+      },
+      {
+        path: "/myorders/allusers",
+        element: (
+          <AdminRoute>
+            <AllUsers />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/myorders/addproducts",
+        element: (
+          <AdminRoute>
+            <AddProducts />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/myorders/myproducts",
+        element: (
+          <AdminRoute>
+            <MyProducts />
+          </AdminRoute>
+        ),
+      },
+    ],
+  },
 ]);
 export default router;
