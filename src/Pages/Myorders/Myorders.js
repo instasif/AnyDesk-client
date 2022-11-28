@@ -23,24 +23,24 @@ const Myorders = () => {
     });
 
 
-    const   removeProduct = id =>{
-      fetch(`http://localhost:5000/order/${id}?email=${user.email}`, {
-        method: 'DELETE',
-        headers: {
-          author: `bearer ${localStorage.getItem('accessToken')}`
-        }
-      })
-      .then(res => res.json())
-      .then(data =>{
-        console.log(data);
-        if(data.deletedCount > 0){
-          toast.success('Removed!');
+    // const   removeProduct = id =>{
+    //   fetch(`http://localhost:5000/order/${id}?email=${user.email}`, {
+    //     method: 'DELETE',
+    //     headers: {
+    //       author: `bearer ${localStorage.getItem('accessToken')}`
+    //     }
+    //   })
+    //   .then(res => res.json())
+    //   .then(data =>{
+    //     console.log(data);
+    //     if(data.deletedCount > 0){
+    //       toast.success('Removed!');
           
-        }
-        refetch();
-      })
+    //     }
+    //     refetch();
+    //   })
   
-    };
+    // };
 
 
     if(isLoading){
@@ -71,7 +71,7 @@ const Myorders = () => {
         <td>{o.product}</td>
         <td>{o.location}</td>
         <td>{o.price} Taka</td>
-        <td><button onClick={() => removeProduct(o._id)} className='btn bg-red-500 btn-xs border-none'>Remove</button></td>
+        {/* <td><button onClick={() => removeProduct(o._id)} className='btn bg-red-500 btn-xs border-none'>Remove</button></td> */}
   </tr>)
       }
     </tbody>

@@ -31,7 +31,6 @@ const Modal = ({treatement, setTreatment}) => {
       if(data.acknowledged){
         toast.success('Add on Dashboard')
       }
-      
     })
 
   }
@@ -52,7 +51,7 @@ const Modal = ({treatement, setTreatment}) => {
             <input name="product" type="text" placeholder="Type here" disabled defaultValue={name} className="input input-bordered input-warning w-full" />
             <input name="price" type="text" placeholder="Type here" disabled defaultValue={resalePrice} className="input input-bordered input-warning w-full" />
             <input name="location" type="text" placeholder="Type here" disabled defaultValue={locationOfSeller} className="input input-bordered input-warning w-full" />
-            <input type="submit" value="Submit" className="btn bg-orange-400 border-none w-full" />
+            <input type="submit"  value="Submit" className="btn bg-orange-400 border-none w-full" />
             </form>
         </div>
       </div>
